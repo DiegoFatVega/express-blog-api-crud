@@ -17,3 +17,4 @@ router.patch(`/:id`, postController.modify);
 
 router.delete(`/:id`,postController.destroy);
 
+module.exports = router;
