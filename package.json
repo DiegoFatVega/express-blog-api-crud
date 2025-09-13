@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "express": "^5.1.0",
+    "node": "^24.8.0"
+  },
+  "name": "express-blog-api-crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev":"node --watch index.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegoFatVega/express-blog-api-crud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiegoFatVega/express-blog-api-crud/issues"
+  },
+  "homepage": "https://github.com/DiegoFatVega/express-blog-api-crud#readme"
+}
