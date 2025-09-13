@@ -1,4 +1,4 @@
-const espress = require (`express`)
+const express = require (`express`)
 
 const router = express.Router();
 
@@ -16,3 +16,4 @@ router.put(`/:id`, postController.update);
 router.patch(`/:id`, postController.modify);
 
 router.delete(`/:id`,postController.destroy);
+
