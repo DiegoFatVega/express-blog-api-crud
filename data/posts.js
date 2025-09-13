@@ -1,4 +1,4 @@
-let posts = [
+const posts = [
   {
     id: 1,
     title: "Ciambellone soffice della nonna",

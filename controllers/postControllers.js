@@ -1,8 +1,7 @@
 const posts = require(`../data/posts`);
 
 function index (req, res){
-    //res.send(`Welcome to mi page`);
-    res.json(posts)
+    res.send(`Welcome to mi page`);
 }
 
 function show (req, res){
