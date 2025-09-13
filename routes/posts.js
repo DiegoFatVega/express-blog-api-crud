@@ -1,0 +1,18 @@
+const espress = require (`express`)
+
+const router = express.Router();
+
+//import of my post Controller
+const postController = require(`../controllers/postControllers`);
+
+router.get(`/`, postController.index);
+
+router.get(`/:id`, postController.show);
+
+router.post(`/`, postController.store);
+
+router.put(`/:id`, postController.update);
+
+router.patch(`/:id`, postController.modify);
+
+router.delete(`/:id`,postController.destroy);
