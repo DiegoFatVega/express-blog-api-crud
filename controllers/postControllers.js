@@ -1,7 +1,14 @@
 const posts = require(`../data/posts`);
 
 function index (req, res){
-    res.send(`Welcome to mi page`);
+    //res.send(`Welcome to mi page`);
+ console.log(req.query.id)
+    let filtered_post = posts;
+
+    if(req.query.id){
+        filtered_post = posts.filter( post => post.id === parseInt(req.query.id));
+    }
+    res.json(filtered_post); 
 }
 
 function show (req, res){
@@ -11,7 +18,7 @@ function show (req, res){
     const post = posts.find(item => item.id === parseInt(id));
     
     if(!post){
-        res.status(404).json({
+        return res.status(404).json({
             error: true,
             message: 'Resource not found'
             
@@ -31,14 +38,13 @@ function update (req, res){
 function modify (req, res){
     res.send(`partial update for the Element`);
 }
-
 function destroy (req, res){
     //res.send(`deleting the element`);
     const {id} = req.params
     const post = posts.find(item => item.id === parseInt(id));
 
      if(!post){
-        res.status(404).json({
+        return res.status(404).json({ //usa il return per far si che non compaia un errore in console, dato che senza il return, il programma segue il flusso e invia due risposte
             error: true,
             message: 'Resource not found'
             
