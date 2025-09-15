@@ -28,7 +28,24 @@ function show (req, res){
 }
 
 function store (req, res){
-    res.send(`created a new element`);
+    //res.send(`created a new element`);
+    console.log(req.body)
+
+    const newId = posts[posts.length - 1].id + 1; //incremento l`id per poter aggiungere un oggetto
+
+    const newPost ={
+        id: newId,
+        title: req.body.title,
+        content: req.body.content,
+        img: req.body.img,
+        tags: req.body.tags
+    }
+    
+    posts.push(newPost);
+    console.log(posts);
+
+    res.status(201);
+    res.json(newPost)
 }
 
 function update (req, res){
@@ -38,6 +55,7 @@ function update (req, res){
 function modify (req, res){
     res.send(`partial update for the Element`);
 }
+
 function destroy (req, res){
     //res.send(`deleting the element`);
     const {id} = req.params
